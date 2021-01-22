@@ -116,6 +116,7 @@ class _TCardState extends State<TCard> with TickerProviderStateMixin {
     );
 
     if (reverse) {
+      print("Reverse");
       return Align(
         alignment: CardReverseAnimations.frontCardShowAnimation(
           _cardReverseController,
@@ -125,6 +126,7 @@ class _TCardState extends State<TCard> with TickerProviderStateMixin {
         child: rotate,
       );
     } else if (forward) {
+      print("Forward");
       return Align(
         alignment: CardAnimations.frontCardDisappearAnimation(
           _cardChangeController,
@@ -352,7 +354,7 @@ class _TCardState extends State<TCard> with TickerProviderStateMixin {
   // 判断是否进行动画
   void _judgeRunAnimation(DragEndDetails details, Size size) {
     // 卡片横轴距离限制
-    final double limit = 10.0;
+    final double limit = 7.0;
     final bool isSwipLeft = _frontCardAlignment.x < -limit;
     final bool isSwipRight = _frontCardAlignment.x > limit;
 
